@@ -6,8 +6,8 @@ import {getUserBalance,getUserCount} from "../controller/User.js";
 
 const userRoute=express.Router();
 
-userRoute.get("/getUserBalance/:player_id",[authenticateToken, checkRole("USER")],getUserBalance);
-userRoute.get("/getUserCount",[authenticateToken, checkRole("USER")],getUserCount);
+userRoute.get("/getUserBalance/:player_id",[authenticateToken, checkRole("default-roles-demo")],getUserBalance);
+userRoute.get("/getUserCount",getUserCount);
 
 // userRoute.post("/user",[ authenticateToken, checkRole("ADMIN")],addUser);
 // userRoute.get("/user",[authenticateToken, checkRole("USER")],getUser);

@@ -6,9 +6,9 @@ import {getUserChoicesByPlayer,addUserChoice,getUserChoiceByCategory} from "../c
 const choiceRoute=express.Router();
 
 
-choiceRoute.get("/getUserChoices/:id",[authenticateToken, checkRole("USER")],getUserChoicesByPlayer);
-choiceRoute.post("/addUserChoice",[authenticateToken, checkRole("USER")],addUserChoice);
-choiceRoute.get("/getUserChoiceByCategory",[authenticateToken, checkRole("USER")],getUserChoiceByCategory);
+choiceRoute.get("/getUserChoices/:id",[authenticateToken, checkRole("default-roles-demo")],getUserChoicesByPlayer);
+choiceRoute.post("/addUserChoice",[authenticateToken, checkRole("default-roles-demo")],addUserChoice);
+choiceRoute.get("/getUserChoiceByCategory",[authenticateToken, checkRole("default-roles-demo")],getUserChoiceByCategory);
 
 
 // choiceRoute.get("/getUserChoices/:id",[authenticateToken, checkRole("USER")],getUserChoices);

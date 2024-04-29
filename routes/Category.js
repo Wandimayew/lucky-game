@@ -7,10 +7,11 @@ import {addCategory,getCategory,getNotSelectedChoice,getCategoryCount} from "../
 const categoryRoute=express.Router();
 
 
-categoryRoute.get("/getCategory",[authenticateToken, checkRole("USER")],getCategory);
+categoryRoute.get("/getCategory",[authenticateToken, checkRole("default-roles-demo")],getCategory);
 categoryRoute.post("/addCategory",addCategory);
 categoryRoute.post("/getNotSelectedChoice",getNotSelectedChoice);
-categoryRoute.get("/getCategoryCount",[authenticateToken, checkRole("USER")],getCategoryCount);
+categoryRoute.get("/getCategoryCount",getCategoryCount);
+
 
 
 // categoryRoute.get("/getCategory",[authenticateToken, checkRole("USER")],getCategory);

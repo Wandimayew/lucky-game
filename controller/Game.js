@@ -160,3 +160,24 @@ const initializeCategoryChoicesForGame = async (game_id, category_id) => {
         throw error;
     }
 };
+
+
+export const getGamesCount=async(req,res)=>{
+    try {
+        const count=await pool.query("SELECT COUNT(*) AS game_count FROM games WHERE is_over = true;");
+        console.log("games",count);
+        return res.status(200).json({
+          success: true,
+          message: "Games Count fetched.",
+          count: count.rows[0].game_count
+        })
+        
+      } catch (error) {
+        return res.status(400).json({
+          success: false,
+          message: "Game Count Not fetched.",
+          error: error.message
+        })
+        
+      }
+}
